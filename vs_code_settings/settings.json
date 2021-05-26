@@ -1,0 +1,74 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "python.autoComplete.addBrackets": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.args": ["--profile=black"],
+  "python.linting.flake8Args": ["--max-line-length=88"],
+  "editor.fontFamily": "'Fira Mono Medium', Consolas, 'Courier New', monospace",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreview": false,
+  "python.languageServer": "Pylance",
+  "python.analysis.completeFunctionParens": true,
+  "editor.suggestSelection": "first",
+  "workbench.colorCustomizations": {
+    "[Material Theme Darker High Contrast]": {}
+  },
+  "editor.fontSize": 16,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "git.autofetch": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.rulers": [80, 120]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.rulers": [80, 120]
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80, 120]
+  },
+  "[python]": {
+    "editor.rulers": [88, 132],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "prettier.tabWidth": 2,
+  "explorer.confirmDelete": false,
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "react-native.packager.port": 19000,
+  "todohighlight.isEnable": true
+}
