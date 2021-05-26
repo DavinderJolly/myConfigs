@@ -26,6 +26,8 @@ setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '!'
+zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' formats "%{$reset_color%}[%{$fg[blue]%}%b%{$reset_color%}] %{$fg[red]%}%u%c%m%{$reset_color%}"
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
