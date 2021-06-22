@@ -1,1 +1,1 @@
-# Just the basic stuff from my configs
+# Just the basic minimal stuff from my configs
