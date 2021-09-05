@@ -4,22 +4,44 @@
   "python.autoComplete.addBrackets": true,
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
-  "python.sortImports.args": ["--profile=black"],
-  "python.linting.flake8Args": ["--max-line-length=88"],
-  "editor.fontFamily": "'Fira Mono Medium', Consolas, 'Courier New', monospace",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
+  "python.sortImports.args": [
+    "--profile=black",
+    "--line-length=88",
+    "--multi-line=3"
   ],
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.enablePreview": false,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--ignore=E203,W503,ANN101"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
   "python.analysis.completeFunctionParens": true,
+  "editor.fontFamily": "'Fira Mono Medium', Consolas, 'Courier New', monospace",
+  "editor.lineNumbers": "relative",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreview": false,
   "editor.suggestSelection": "first",
   "workbench.colorCustomizations": {
-    "[Material Theme Darker High Contrast]": {}
+    "[Material Theme Darker High Contrast]": {},
+    "terminal.background": "#181818",
+    "terminal.foreground": "#D3D7CF",
+    "terminal.ansiBlack": "#000000",
+    "terminal.ansiRed": "#CC0000",
+    "terminal.ansiGreen": "#4E9A06",
+    "terminal.ansiYellow": "#C4A000",
+    "terminal.ansiBlue": "#3465A4",
+    "terminal.ansiCyan": "#06989A",
+    "terminal.ansiWhite": "#D3D7CF",
+    "terminal.ansiBrightBlack": "#555753",
+    "terminal.ansiBrightRed": "#EF2929",
+    "terminal.ansiBrightGreen": "#8AE234",
+    "terminal.ansiBrightYellow": "#FCE94F",
+    "terminal.ansiBrightBlue": "#729FCF",
+    "terminal.ansiBrightCyan": "#34E2E2",
+    "terminal.ansiBrightWhite": "#EEEEEC"
   },
   "editor.fontSize": 16,
   "files.exclude": {
@@ -29,6 +51,8 @@
     "**/.factorypath": true
   },
   "git.autofetch": true,
+  "vim.smartRelativeLine": true,
+  "vim.useCtrlKeys": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
@@ -55,9 +79,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [80, 120]
+    "editor.rulers": [80, 120],
+    "editor.tabSize": 2
   },
   "[python]": {
     "editor.rulers": [88, 132],
@@ -65,10 +94,67 @@
       "source.organizeImports": true
     }
   },
+  "[django-html]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+
+  "indentRainbow.excludedLanguages": ["plaintext", "cpp", "go", "log"],
   "prettier.tabWidth": 2,
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
   "react-native.packager.port": 19000,
-  "todohighlight.isEnable": true
+  "files.associations": {
+    "*.jsx": "javascriptreact"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-nologo"]
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "Anonymice Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "powershell.integratedConsole.suppressStartupBanner": true,
+  "powershell.integratedConsole.showOnStartup": false,
+  "sourcery.token": "",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "emmet.includeLanguages": { "django-html": "html" },
+  "beautify.language": {
+    "html": ["django-html"]
+  },
+  "beautify.config": {
+    "html": {
+      "indent_size": 2,
+      "wrap_attributes": "auto",
+      "wrap_line_length": 100
+    }
+  },
+  "beautify.ignore": ["*.js", "*.css"],
+  "autoDocstring.docstringFormat": "sphinx",
+  "discord.removeDetails": true,
+  "discord.removeLowerDetails": true,
+  "discord.removeRemoteRepository": true
 }
