@@ -138,7 +138,7 @@
   "terminal.integrated.fontSize": 16,
   "powershell.integratedConsole.suppressStartupBanner": true,
   "powershell.integratedConsole.showOnStartup": false,
-  "sourcery.token": "user_vUnYpLPd0D_oFiicgMIBIWuJ__WipbWlsGrLwVC0PtTZfiqQhzMthaBk8_Y",
+  "sourcery.token": "...",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
