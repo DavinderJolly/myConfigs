@@ -7,7 +7,9 @@
   "python.sortImports.args": [
     "--profile=black",
     "--line-length=88",
-    "--multi-line=3"
+    "--multi-line=3",
+    "--force-single-line-imports",
+    "--trailing-comma"
   ],
   "python.linting.flake8Args": [
     "--max-line-length=88",
@@ -136,7 +138,7 @@
   "terminal.integrated.fontSize": 16,
   "powershell.integratedConsole.suppressStartupBanner": true,
   "powershell.integratedConsole.showOnStartup": false,
-  "sourcery.token": "",
+  "sourcery.token": "user_vUnYpLPd0D_oFiicgMIBIWuJ__WipbWlsGrLwVC0PtTZfiqQhzMthaBk8_Y",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
@@ -154,7 +156,10 @@
   },
   "beautify.ignore": ["*.js", "*.css"],
   "autoDocstring.docstringFormat": "sphinx",
-  "discord.removeDetails": true,
   "discord.removeLowerDetails": true,
-  "discord.removeRemoteRepository": true
+  "discord.removeRemoteRepository": true,
+  "go.toolsManagement.autoUpdate": true,
+  "discord.detailsEditing": "Editing a {Lang} file",
+  "liveshare.connectionMode": "relay",
+  "window.zoomLevel": 1
 }
