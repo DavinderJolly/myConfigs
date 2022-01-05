@@ -1,5 +1,16 @@
 # Davinder's zsh config
 
+# Set default editor
+    export EDITOR=vim
+
+# Vim mode and backspace fix
+    set -o vi
+    bindkey "^?" backward-delete-char
+
+# Open command in vim
+    autoload edit-command-line
+    zle -N edit-command-line
+    bindkey -M vicmd ^X^E edit-command-line
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -16,7 +27,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)               # Include hidden files.
 
 # setting up version control prompt
 autoload -Uz vcs_info
@@ -33,12 +44,17 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 +vi-git-untracked() {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-     git status --porcelain | grep -m 1 '^??' &>/dev/null
+    git status --porcelain | grep -m 1 '^??' &>/dev/null
   then
     hook_com[misc]='?'
   fi
 }
 
-# Load plugins; should be last.
+# Load plugins.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
