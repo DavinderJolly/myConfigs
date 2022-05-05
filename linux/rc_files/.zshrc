@@ -1,16 +1,19 @@
 # Davinder's zsh config
 
 # Set default editor
-    export EDITOR=vim
+export EDITOR=vim
+
+# Add doom emacs executable to path
+export PATH="$HOME/.emacs.d/bin/:$PATH"
 
 # Vim mode and backspace fix
-    set -o vi
-    bindkey "^?" backward-delete-char
+set -o vi
+bindkey "^?" backward-delete-char
 
 # Open command in vim
-    autoload edit-command-line
-    zle -N edit-command-line
-    bindkey -M vicmd ^X^E edit-command-line
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd ^X^E edit-command-line
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -29,7 +32,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)               # Include hidden files.
 
-# setting up version control prompt
+# Setting up version control prompt
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -50,11 +53,13 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
   fi
 }
 
+# Setting up Aliases
+alias xclip='xargs echo -n | xclip -selection clipboard'  # xclip fix
+
 # Load plugins.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
