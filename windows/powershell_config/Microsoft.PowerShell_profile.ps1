@@ -1,7 +1,14 @@
+## Dependencies ###
+# winget install oh-my-posh
+# Install-Module -Name Terminal-Icons -Repository PSGallery
+# Install-Module -Name posh-git -Scope CurrentUser
+# Install-Module -Name z
+
 # Set up the theme
 Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme slimfat
+
+# Set oh my posh theme
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\negligible.omp.json" | Invoke-Expression
 
 # Set Terminal Icons
 Import-Module Terminal-Icons
@@ -13,20 +20,27 @@ $ENV:VIRTUAL_ENV_DISABLE_PROMPT = 1
 Start-Service ssh-agent
 
 # Set up custom scripts
-$CustomScripts = "C:\Users\DELL\Documents\PowerShell\CustomScripts"
-New-Alias -Name Manage-Venv -Value "$CustomScripts\Manage-Venv.ps1"
+$CustomScripts = "C:\\Users\\DELL\\Documents\\PowerShell\\CustomScripts"
+New-Alias -Name Manage-Venv -Value "$CustomScripts\\Manage-Venv.ps1"
 
 # Set aliases
-Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
-Set-Alias find 'C:\Program Files\Git\usr\bin\find.exe'
-Set-Alias grep 'C:\Program Files\Git\usr\bin\grep.exe'
-Set-Alias sed 'C:\Program Files\Git\usr\bin\sed.exe'
+Set-Alias less 'C:\\Program Files\\Git\\usr\\bin\\less.exe'
+Set-Alias find 'C:\\Program Files\\Git\\usr\\bin\\find.exe'
+
+# Set gvim to be gitbash's vim while replacing windows vim with nvim
+Set-Alias gvim 'C:\\Program Files\\Git\\usr\\bin\\vim.exe'
+
+# Set vim to open neovim
+Set-Alias vim nvim
 
 # Set up Suggestions
 Import-Module PSReadLine
 
 # Set vim mode
 Set-PSReadLineOption -EditMode Vi
+
+# Set Vim as Visual
+$env:VISUAL = "vim"
 
 # Shows navigable menu of all options when hitting Tab
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
@@ -152,10 +166,10 @@ function tree {
     # Hashtable of characters used to draw the structure
     $ndx = [bool] $Ascii
     $chars = @{
-        interior = ('├', '+')[$ndx]
-        last     = ('└', '\')[$ndx]                                                                #'
-        hline    = ('─', '-')[$ndx]
-        vline    = ('│', '|')[$ndx]
+        interior = ('+', '+')[$ndx]
+        last     = ('+', '\\')[$ndx]                                                                #'
+        hline    = ('-', '-')[$ndx]
+        vline    = ('?', '|')[$ndx]
         space    = ' '
     }
 

@@ -1,184 +1,203 @@
 {
-  "workbench.colorTheme": "One Dark Pro",
-  "kite.showWelcomeNotificationOnStartup": false,
-  "python.languageServer": "Pylance",
-  "python.analysis.typeCheckingMode": "basic",
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "black",
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.sortImports.args": [
-    "--profile=black",
-    "--line-length=88",
-    "--multi-line=3",
-    "--force-single-line-imports",
-    "--trailing-comma"
-  ],
-  "python.linting.flake8Args": [
-    "--max-line-length=88",
-    "--ignore=E203,W503,ANN101"
-  ],
-  "python.analysis.completeFunctionParens": true,
-  "editor.fontFamily": "'Fira Mono Medium', Consolas, 'Courier New', monospace",
-  "editor.lineNumbers": "relative",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.enablePreview": false,
-  "editor.suggestSelection": "first",
-  "workbench.colorCustomizations": {
-    "[Material Theme Darker High Contrast]": {},
-    "terminal.foreground": "#EEEEEC",
-    "terminal.ansiWhite": "#D3D7CF",
-    "terminal.ansiBrightWhite": "#EEEEEC"
-  },
-  "editor.fontSize": 16,
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "git.autofetch": true,
-  "vim.smartRelativeLine": true,
-  "vim.useCtrlKeys": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    "<C-b>": false,
-    "<C-v>": false,
-    "<C-k>": false,
-    "<C-c>": false,
-    "<C-x>": false,
-    "<C-z>": false,
-    "<C-w>": false
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2,
-    "editor.rulers": [80, 120]
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2,
-    "editor.rulers": [80, 120]
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [80, 120],
-    "editor.tabSize": 2
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [80, 120],
-    "editor.tabSize": 2
-  },
-  "[python]": {
-    "editor.rulers": [88, 132],
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
-  },
-  "[django-html]": {
-    "editor.tabSize": 2,
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": true,
-      "strings": true
+    "workbench.colorTheme": "One Dark Pro",
+    "python.languageServer": "Pylance",
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.sortImports.args": [
+        "--profile=black",
+        "--line-length=88",
+        "--multi-line=3",
+        "--force-single-line-imports",
+        "--trailing-comma"
+    ],
+    "python.linting.flake8Args": [
+        "--max-line-length=88",
+        "--ignore=E203,W503,ANN101"
+    ],
+    "editor.fontFamily": "'Fira Mono Medium', Consolas, 'Courier New', monospace",
+    "editor.lineNumbers": "relative",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
     },
-    "editor.defaultFormatter": "HookyQR.beautify"
-  },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.enablePreview": false,
+    "editor.suggestSelection": "first",
+    "workbench.colorCustomizations": {
+        "[Material Theme Darker High Contrast]": {},
+        "terminal.foreground": "#EEEEEC",
+        "terminal.ansiWhite": "#D3D7CF",
+        "terminal.ansiBrightWhite": "#EEEEEC"
+    },
+    "editor.fontSize": 16,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "git.autofetch": true,
+    "vim.smartRelativeLine": true,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-b>": false,
+        "<C-v>": false,
+        "<C-k>": false,
+        "<C-c>": false,
+        "<C-x>": false,
+        "<C-z>": false,
+        "<C-w>": false
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.rulers": [80, 120]
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.rulers": [80, 120]
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare",
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare",
+        "editor.tabSize": 2
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare",
+        "editor.rulers": [80, 120],
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.rulers": [80, 120],
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.rulers": [88, 132],
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "[django-html]": {
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
 
-  "indentRainbow.excludedLanguages": ["plaintext", "cpp", "go", "log"],
-  "prettier.tabWidth": 2,
-  "explorer.confirmDelete": false,
-  "files.autoSave": "afterDelay",
-  "files.trimTrailingWhitespace": true,
-  "react-native.packager.port": 19000,
-  "files.associations": {
-    "*.jsx": "javascriptreact",
-    "_vimrc": "vimrc"
-  },
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell",
-      "args": ["-nologo"]
+    "indentRainbow.excludedLanguages": ["plaintext", "cpp", "go", "log"],
+    "prettier.tabWidth": 2,
+    "explorer.confirmDelete": true,
+    "files.trimTrailingWhitespace": true,
+    "react-native.packager.port": 19000,
+    "files.associations": {
+        "*.jsx": "javascriptreact",
+        "_vimrc": "vimrc"
     },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": ["-nologo"]
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
     },
-    "Git Bash": {
-      "source": "Git Bash"
-    }
-  },
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "Anonymice Nerd Font Mono",
-  "terminal.integrated.fontSize": 16,
-  "powershell.integratedConsole.suppressStartupBanner": true,
-  "powershell.integratedConsole.showOnStartup": false,
-  "sourcery.token": "<TOKEN_HERE>",
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  },
-  "emmet.includeLanguages": { "django-html": "html", "jinja-html": "html" },
-  "beautify.language": {
-    "html": ["django-html", "jinja-html"]
-  },
-  "beautify.config": {
-    "html": {
-      "indent_size": 2,
-      "wrap_attributes": "auto",
-      "wrap_line_length": 100
-    }
-  },
-  "beautify.ignore": ["*.js", "*.css"],
-  "autoDocstring.docstringFormat": "sphinx",
-  "discord.removeLowerDetails": true,
-  "discord.removeRemoteRepository": true,
-  "discord.detailsEditing": "Editing a {Lang} file",
-  "go.toolsManagement.autoUpdate": true,
-  "redhat.telemetry.enabled": false,
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.insertFinalNewline": true,
-  "liveshare.connectionMode": "relay",
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "telemetry.telemetryLevel": "off",
-  "editor.inlineSuggest.enabled": true,
-  "python.pythonPath": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
-  "window.newWindowDimensions": "fullscreen",
-  "window.restoreFullscreen": true,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
-  "editor.bracketPairColorization.enabled": true
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "Anonymice Nerd Font Mono",
+    "terminal.integrated.fontSize": 16,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.integratedConsole.showOnStartup": false,
+    "sourcery.token": "user_5S65gNImc2THkEn_ibwsJ_ZyWBB_CXbguSTSJGmwXtdgGRykiSrYs5yzLug",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "emmet.includeLanguages": { "django-html": "html", "jinja-html": "html" },
+    "beautify.language": {
+        "html": ["django-html", "jinja-html"]
+    },
+    "beautify.config": {
+        "html": {
+            "indent_size": 2,
+            "wrap_attributes": "auto",
+            "wrap_line_length": 100
+        }
+    },
+    "beautify.ignore": ["*.js", "*.css"],
+    "autoDocstring.docstringFormat": "sphinx",
+    "discord.removeLowerDetails": true,
+    "discord.removeRemoteRepository": true,
+    "discord.detailsEditing": "Editing a {Lang} file",
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--ignore-missing-imports",
+        "--show-column-numbers",
+        "--no-pretty"
+    ],
+    "files.insertFinalNewline": true,
+    "liveshare.connectionMode": "relay",
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "telemetry.telemetryLevel": "off",
+    "editor.inlineSuggest.enabled": true,
+    "window.newWindowDimensions": "fullscreen",
+    "window.restoreFullscreen": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.bracketPairColorization.enabled": true,
+    "liveshare.presence": true,
+    "files.autoSave": "afterDelay",
+    "svelte.enable-ts-plugin": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "java": false
+    },
+    "thunder-client.codeSnippetLanguage": "cs-httpclient",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "julia.lint.run": true
 }
