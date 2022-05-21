@@ -83,12 +83,6 @@
 (with-eval-after-load 'emmet-mode
   (define-key emmet-mode-keymap (kbd "C-c j") 'emmet-expand-line))
 
-;; Configure C formatter
-(after! format
-  (set-formatter! 'clang-format
-    '("clang-format"
-      "-style={BasedOnStyle: Google, IndentWidth: 4, SortIncludes: false}")
-    :modes '(c-mode)))
 
 ;; Python settings
 (setq py-isort-options  '("--profile=black"
@@ -116,3 +110,8 @@
   (set-face-attribute 'org-level-3 nil :height 1.1))
 
 (add-hook 'org-mode-hook #'custom/org-mode-setup)
+
+;; Smooth scrolling
+(setq pixel-scroll-precision-use-momentum 't)
+(pixel-scroll-mode 1)
+(pixel-scroll-precision-mode 1)
