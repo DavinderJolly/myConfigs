@@ -26,8 +26,10 @@ set laststatus=3
 set scrolloff=10
 set expandtab
 " let loaded_matchparen = 1
-set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
+
+" Add mouse support
+set mouse=a
 
 " incremental substitution (neovim)
 if has('nvim')
