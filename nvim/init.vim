@@ -25,6 +25,7 @@ set cmdheight=1
 set laststatus=3
 set scrolloff=10
 set expandtab
+
 " let loaded_matchparen = 1
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -132,6 +133,9 @@ runtime ./plug.vim
 if has('win32')
   runtime ./windows.vim
 endif
+if has('unix')
+  runtime ./unix.vim
+endif
 
 runtime ./maps.vim
 "}}}
@@ -147,7 +151,16 @@ if exists("&termguicolors") && exists("&winblend")
   set wildoptions=pum
   set pumblend=5
   set background=dark
-  " Use the onedark theme
+
+" Theme setup
+lua <<EOF
+
+  require('onedark').setup {
+    transparent=true,
+  }
+
+EOF
+
   colorscheme onedark
   runtime onedark
 endif
