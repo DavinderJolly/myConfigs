@@ -30,6 +30,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'mattn/emmet-vim'
   Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'lewis6991/gitsigns.nvim'
 endif
 
 call plug#end()
