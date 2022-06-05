@@ -56,10 +56,37 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 # Setting up Aliases
 alias xclip='xargs echo -n | xclip -selection clipboard'  # xclip fix
 
+if command -v emacsclient &> /dev/null; then
+    alias emacs="emacsclient -c -a 'emacs'"
+fi
+
+if command -v nvim &> /dev/null; then
+    alias gvim=/usr/bin/env\ vim
+    alias vim=nvim
+fi
+
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+    alias cd=z
+fi
+
+
+if command -v lsd &> /dev/null; then
+    alias ls=lsd
+fi
+
+if command -v batcat &> /dev/null; then
+    alias cat=batcat\ --theme\ TwoDark
+fi
+
 # Load plugins.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
+source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
