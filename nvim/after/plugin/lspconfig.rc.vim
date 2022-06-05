@@ -55,9 +55,13 @@ nvim_lsp.jdtls.setup {
   filetypes = { "java" },
   }
 
-nvim_lsp.cssls.setup {
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.emmet_ls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "css" },
+  filetypes = { "html", "css", "scss" },
   }
 
 nvim_lsp.clangd.setup {
