@@ -11,6 +11,7 @@ if !1 | finish | endif
 set nocompatible
 set number
 set relativenumber
+set splitright
 syntax enable
 set fileencodings=utf-8
 set encoding=utf-8

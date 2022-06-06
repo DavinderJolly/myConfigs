@@ -42,7 +42,13 @@ end
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", }
+  filetypes = {
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+      "javascript",
+      "javascriptreact",
+    }
   }
 
 nvim_lsp.pyright.setup {
@@ -90,5 +96,13 @@ nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   filetypes = { "lua" }
   }
+
+if vim.fn.has('unix') == 1 then
+  nvim_lsp.bashls.setup {
+    on_attach = on_attach,
+    filetypes = { "sh", "zsh" }
+    }
+end
+
 
 EOF
