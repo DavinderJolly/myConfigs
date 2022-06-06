@@ -40,6 +40,18 @@ local on_attach = function(client, bufnr)
 
 end
 
+
+nvim_lsp.eslint.setup {
+  on_attach = on_attach,
+  filetypes = {
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+      "javascript",
+      "javascriptreact",
+    }
+  }
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = {

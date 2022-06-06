@@ -66,6 +66,9 @@ if has("nvim")
   " Emmet Autocompletion
   Plug 'mattn/emmet-vim'
 
+  " HTML Tag autocomplete and change
+  Plug 'windwp/nvim-ts-autotag'
+
   " Show color rgb, hsl and hex colors in editor
   Plug 'norcalli/nvim-colorizer.lua'
 
