@@ -34,6 +34,9 @@ if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'p00f/nvim-ts-rainbow'
 
+  " Show AST created by treesitter
+  Plug 'nvim-treesitter/playground'
+
   " Snippets
   Plug 'L3MON4D3/LuaSnip'
 
