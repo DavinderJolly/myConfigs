@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Code Pro 12
+# font pango:Source Code Pro 12
+font pango:FiraMono Nerd Font Mono
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -248,10 +249,10 @@ client.background       $base07
 
 
 # Set Wallpaper
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore &
 
 # Picom
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom &
 
 # Picom
-exec_always --no-startup-id emacs --daemon
+exec_always --no-startup-id /usr/local/bin/emacs --daemon &

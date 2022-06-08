@@ -13,7 +13,7 @@ bindkey "^?" backward-delete-char
 # Open command in vim
 autoload edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd ^X^E edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -56,28 +56,44 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 # Setting up Aliases
 alias xclip='xargs echo -n | xclip -selection clipboard'  # xclip fix
 
+if command -v fdfind &> /dev/null; then
+  alias fd=fdfind
+fi
+
 if command -v emacsclient &> /dev/null; then
-    alias emacs="emacsclient -c -a 'emacs'"
+  alias emacs="emacsclient -c -a 'emacs'"
 fi
 
 if command -v nvim &> /dev/null; then
-    alias gvim=/usr/bin/env\ vim
-    alias vim=nvim
+  alias gvim=/usr/bin/env\ vim
+  alias vim=nvim
 fi
 
 if command -v zoxide &> /dev/null; then
-    eval "$(zoxide init zsh)"
-    alias cd=z
+  eval "$(zoxide init zsh)"
+  alias cd=z
 fi
 
-
 if command -v lsd &> /dev/null; then
-    alias ls=lsd
+  alias ls=lsd
+  alias la=ls\ -Al
+else
+  alias ls=ls\ --color=auto
+  alias la=ls\ --color=auto\ -Al
 fi
 
 if command -v batcat &> /dev/null; then
-    alias cat=batcat\ --theme\ TwoDark
+  alias cat=batcat\ --theme\ TwoDark
 fi
+
+# FZF variables
+# fd is fdfind on debian and ubuntu
+export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --color=always'
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+export FZF_ALT_C_COMMAND="fdfind --type d --hidden --color=always"
+export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
 
 # Load plugins.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
