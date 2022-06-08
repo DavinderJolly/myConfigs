@@ -8,10 +8,16 @@ using namespace System.Management.Automation.Language
 # Install-Module -Name Terminal-Icons -Repository PSGallery
 # Install-Module -Name posh-git -Scope CurrentUser
 # curl.exe -A "MS" https://webinstall.dev/zoxide | powershell
+# cargo install fd-find
+# (install fzf from git or package manager)
 # Install-Module -Name PSFzf -Scope CurrentUser
 
 # Get newer PSReadLine to get better completions
 # Install-Module -Name PSReadLine -Scope CurrentUser -Force
+
+# Nice to have things
+# cargo install ripgrep
+# winget install Neovim.Neovim
 
 # Set up the theme
 Import-Module posh-git
@@ -34,7 +40,6 @@ $CustomScripts = "C:\\Users\\DELL\\Documents\\PowerShell\\CustomScripts"
 
 # Set aliases
 Set-Alias less 'C:\\Program Files\\Git\\usr\\bin\\less.exe'
-Set-Alias find 'C:\\Program Files\\Git\\usr\\bin\\find.exe'
 Set-Alias tig 'C:\\Program Files\\Git\\usr\\bin\\tig.exe'
 
 # Set gvim to be gitbash's vim while replacing windows vim with nvim
@@ -43,13 +48,14 @@ Set-Alias gvim 'C:\\Program Files\\Git\\usr\\bin\\vim.exe'
 if (Get-Command nvim -ErrorAction SilentlyContinue) {
   # Set vim to open neovim
   Set-Alias vim nvim
+  # Set Vim as Visual and Editor
+  $ENV:VISUAL = "nvim"
+  $ENV:EDITOR = "nvim"
 }
 
 # Set up Suggestions
 Import-Module PSReadLine
 
-# Set Vim as Visual
-$ENV:VISUAL = "nvim"
 
 # Set vim mode
 Set-PSReadLineOption -EditMode Vi
@@ -72,6 +78,14 @@ Set-PSReadLineOption -BellStyle None
 Set-PSReadlineOption -Colors @{InlinePrediction = "DarkGray" }
 
 # Fzf setup
+
+$ENV:FZF_DEFAULT_COMMAND='fd --type f --hidden --color=always'
+$ENV:FZF_DEFAULT_OPTS="--ansi"
+$ENV:FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+$ENV:FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+$ENV:FZF_ALT_C_COMMAND="fd --type d --hidden --color=always"
+$ENV:FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
+
 if (Get-Module -ListAvailable -Name PSFzf)
 {
   Import-Module PSFzf
@@ -82,6 +96,11 @@ if (Get-Module -ListAvailable -Name PSFzf)
 
   # Override default tab completion
   Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+
+  # Allow alias
+  Set-PsFzfOption -EnableAliasFuzzyKillProcess
+  Set-PsFzfOption -EnableAliasFuzzyEdit
+
 } else {
   # Shows navigable menu of all options when hitting Tab
   Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
