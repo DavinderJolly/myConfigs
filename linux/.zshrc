@@ -15,9 +15,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -32,26 +29,35 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)               # Include hidden files.
 
-# Setting up version control prompt
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '!'
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:*' formats "%{$reset_color%}[%{$fg[blue]%}%b%{$reset_color%}] %{$fg[red]%}%u%c%m%{$reset_color%}"
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
-+vi-git-untracked() {
-  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-    git status --porcelain | grep -m 1 '^??' &>/dev/null
-  then
-    hook_com[misc]='?'
-  fi
-}
+# --- Old Prompt --- #
+# # Enable colors and change prompt:
+# autoload -U colors && colors
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# # Setting up version control prompt
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# setopt prompt_subst
+# RPROMPT=\$vcs_info_msg_0_
+# zstyle ':vcs_info:*' enable git
+# zstyle ':vcs_info:*' check-for-changes true
+# zstyle ':vcs_info:*' unstagedstr '!'
+# zstyle ':vcs_info:*' stagedstr '+'
+# zstyle ':vcs_info:*' formats "%{$reset_color%}[%{$fg[blue]%}%b%{$reset_color%}] %{$fg[red]%}%u%c%m%{$reset_color%}"
+# zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
+# +vi-git-untracked() {
+#   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+#     git status --porcelain | grep -m 1 '^??' &>/dev/null
+#   then
+#     hook_com[misc]='?'
+#   fi
+# }
+
+# Starship prompt
+eval "$(starship init zsh)"
 
 # Setting up Aliases
 alias xclip='xargs echo -n | xclip -selection clipboard'  # xclip fix
