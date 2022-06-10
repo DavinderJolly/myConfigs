@@ -68,6 +68,11 @@ nvim_lsp.pyright.setup {
   filetypes = { "python" },
   }
 
+nvim_lsp.sourcery.setup {
+  on_attach = on_attach,
+  filetypes = { "python" },
+  }
+
 nvim_lsp.jdtls.setup {
   on_attach = on_attach,
   filetypes = { "java" },
@@ -82,6 +87,12 @@ nvim_lsp.emmet_ls.setup {
   filetypes = { "html", "css", "scss" },
   }
 
+nvim_lsp.cssls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "css", "scss" },
+  }
+
 nvim_lsp.clangd.setup {
   on_attach = on_attach,
   filetypes = { "c", "cpp", "c++", "cc" }
@@ -92,12 +103,10 @@ nvim_lsp.rust_analyzer.setup {
   filetypes = { "rust", "rs" }
   }
 
-
 nvim_lsp.vimls.setup {
   on_attach = on_attach,
   filetypes = { "vim", "nvim" }
   }
-
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
@@ -107,6 +116,16 @@ nvim_lsp.gopls.setup {
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   filetypes = { "lua" }
+  }
+
+nvim_lsp.dockerls.setup {
+  on_attach = on_attach,
+  filetypes = { "dockerfile", "docker-compose" }
+  }
+
+nvim_lsp.yamlls.setup {
+  on_attach = on_attach,
+  filetypes = { "yaml", "yaml.docker-compose" }
   }
 
 if vim.fn.has('unix') == 1 then
