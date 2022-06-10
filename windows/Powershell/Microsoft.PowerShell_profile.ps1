@@ -4,7 +4,13 @@ using namespace System.Management.Automation.Language
 
 
 ### Dependencies ###
+
+# For older shell prompt
 # winget install oh-my-posh
+
+# For faste cross-platform starship shell prompt
+# cargo install starship --locked
+
 # Install-Module -Name Terminal-Icons -Repository PSGallery
 # Install-Module -Name posh-git -Scope CurrentUser
 # curl.exe -A "MS" https://webinstall.dev/zoxide | powershell
@@ -22,8 +28,11 @@ using namespace System.Management.Automation.Language
 # Set up the theme
 Import-Module posh-git
 
-# Set oh my posh theme
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\negligible.omp.json" | Invoke-Expression
+# Set oh my posh theme # Old slower prompt
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\negligible.omp.json" | Invoke-Expression
+
+# Set starship prompt
+Invoke-Expression (&starship init powershell)
 
 # Set Terminal Icons
 Import-Module Terminal-Icons
@@ -79,15 +88,15 @@ Set-PSReadlineOption -Colors @{InlinePrediction = "DarkGray" }
 
 # Fzf setup
 
-$ENV:FZF_DEFAULT_COMMAND='fd --type f --hidden --color=always'
-$ENV:FZF_DEFAULT_OPTS="--ansi"
-$ENV:FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-$ENV:FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
-$ENV:FZF_ALT_C_COMMAND="fd --type d --hidden --color=always"
-$ENV:FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
 
 if (Get-Module -ListAvailable -Name PSFzf)
 {
+  $ENV:FZF_DEFAULT_COMMAND='fd --type f --hidden --color=always --exclude node_modules --exclude .git --exclude .venv'
+  $ENV:FZF_DEFAULT_OPTS="--ansi"
+  $ENV:FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  $ENV:FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+  $ENV:FZF_ALT_C_COMMAND="fd --type d --hidden --color=always --exclude node_modules --exclude .git --exclude .venv"
+  $ENV:FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
   Import-Module PSFzf
 
   # Override PSReadLine's history search
