@@ -5,6 +5,37 @@ set number relativenumber
 set nocompatible
 set splitright
 
+"""--- Custom binds ---"""
+
+" sorround selection with quotes
+vnoremap s" c"<C-r>""<ESC>
+vnoremap s' c'<C-r>"'<ESC>
+
+" sorround selection with brackets
+vnoremap s( c(<C-r>")<ESC>
+vnoremap s{ c{<C-r>"}<ESC>
+vnoremap s[ c[<C-r>"]<ESC>
+
+" Copy to system clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from system clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+"""--- end custom mappings ---"""
+
+" Open Current File in browser
+command OpenInBrave :!brave %:p
+
+" Remove gitbash vim's visual bell
+set novisualbell
+
 " Setting view dir to the one in $HOME
 set viewdir=C:\Users\Davinder\vimfiles\view
 
