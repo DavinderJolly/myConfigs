@@ -71,6 +71,9 @@ nvim_lsp.pyright.setup {
 nvim_lsp.sourcery.setup {
   on_attach = on_attach,
   filetypes = { "python" },
+  init_options = {
+    token="<token>",
+    }
   }
 
 nvim_lsp.jdtls.setup {
