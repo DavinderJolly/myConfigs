@@ -37,8 +37,8 @@ Invoke-Expression (&starship init powershell)
 # Set Terminal Icons
 Import-Module Terminal-Icons
 
-# Disable default venv prompt
-$ENV:VIRTUAL_ENV_DISABLE_PROMPT = 1
+# Disable default venv prompt (not needed for starship prompt)
+# $ENV:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 # Start the ssh-agent
 Start-Service ssh-agent
