@@ -1,0 +1,7 @@
+configuration {
+  modi: "window,drun,ssh,combi";
+  font: "FiraMono Nerd Font Mono 14";
+  combi-modi: "window,drun,ssh";
+  show-icons: true;
+}
+@theme "~/.config/rofi/themes/dmenu.rasi"
