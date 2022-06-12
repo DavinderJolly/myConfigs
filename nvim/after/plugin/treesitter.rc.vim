@@ -20,6 +20,7 @@ require'nvim-treesitter.configs'.setup {
     "scss",
     "python",
     "bash",
+    "clojure",
     "c",
     "cpp",
     "dockerfile",
