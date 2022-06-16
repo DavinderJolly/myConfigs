@@ -40,8 +40,11 @@ local on_attach = function(client, bufnr)
 
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 
 nvim_lsp.eslint.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = {
       "typescript",
@@ -53,6 +56,7 @@ nvim_lsp.eslint.setup {
   }
 
 nvim_lsp.tsserver.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = {
       "typescript",
@@ -64,25 +68,26 @@ nvim_lsp.tsserver.setup {
   }
 
 nvim_lsp.pyright.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "python" },
   }
 
 nvim_lsp.sourcery.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "python" },
   init_options = {
-    token="<token>",
+    token = "<token>",
     }
   }
 
 nvim_lsp.jdtls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "java" },
   }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.emmet_ls.setup {
   capabilities = capabilities,
@@ -97,42 +102,50 @@ nvim_lsp.cssls.setup {
   }
 
 nvim_lsp.clangd.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "c", "cpp", "c++", "cc" }
   }
 
 nvim_lsp.rust_analyzer.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "rust", "rs" }
   }
 
 nvim_lsp.vimls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "vim", "nvim" }
   }
 
 nvim_lsp.gopls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "go", "gomod" }
   }
 
 nvim_lsp.sumneko_lua.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "lua" }
   }
 
 nvim_lsp.dockerls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "dockerfile", "docker-compose" }
   }
 
 nvim_lsp.yamlls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "yaml", "yaml.docker-compose" }
   }
 
 if vim.fn.has('unix') == 1 then
   nvim_lsp.bashls.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "sh", "zsh" }
     }
