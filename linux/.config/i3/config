@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:Source Code Pro 12
-font pango:FiraMono Nerd Font Mono
+font pango:FiraMono Nerd Font Mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -229,10 +229,13 @@ set $base0F #be5046
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command ~/.local/bin/bumblebee-status \
-            -m date time \
-            -p time.format="%H:%M" \
-            -t onedark-powerline
+  font pango:FiraMono Nerd Font Mono 12
+  position top
+  tray_output none
+  status_command ~/.local/bin/bumblebee-status \
+    -m disk:root cpu memory date time apt \
+    -p root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" \
+    -t onedark-powerline
 	position top
     colors {
         background $base00
