@@ -4,9 +4,9 @@ endif
 
 call plug#begin()
 
-" Git features
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+" old vim plugins used before neogit
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-rhubarb'
 
 " Lexical features
 Plug 'cohama/lexima.vim'
@@ -76,8 +76,10 @@ if has("nvim")
   " Show color rgb, hsl and hex colors in editor
   Plug 'norcalli/nvim-colorizer.lua'
 
-  " Help with managing
+  " Git Plugins
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'TimUntersberger/neogit'
+
 
   " Tree plugin because netrw weird on windows
   Plug 'kyazdani42/nvim-tree.lua'
