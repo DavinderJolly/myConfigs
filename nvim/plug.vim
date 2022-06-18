@@ -79,9 +79,6 @@ if has("nvim")
   " Help with managing
   Plug 'lewis6991/gitsigns.nvim'
 
-  " Auto save files on change when leaving insert mode
-  Plug 'Pocco81/AutoSave.nvim'
-
   " Tree plugin because netrw weird on windows
   Plug 'kyazdani42/nvim-tree.lua'
 endif
