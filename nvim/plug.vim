@@ -12,14 +12,18 @@ call plug#begin()
 Plug 'cohama/lexima.vim'
 
 if has("nvim")
+
+  " Theme
+  Plug 'ful1e5/onedark.nvim'
+
+  " Tree plugin because netrw weird on windows
+  Plug 'kyazdani42/nvim-tree.lua'
+
   " EditorConfig files
   Plug 'gpanders/editorconfig.nvim'
 
   " Toggle Comments
   Plug 'tpope/vim-commentary'
-
-  " Theme
-  Plug 'ful1e5/onedark.nvim'
 
   " Automatically install language servers
   Plug 'williamboman/nvim-lsp-installer'
@@ -80,9 +84,6 @@ if has("nvim")
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'TimUntersberger/neogit'
 
-
-  " Tree plugin because netrw weird on windows
-  Plug 'kyazdani42/nvim-tree.lua'
 endif
 
 call plug#end()

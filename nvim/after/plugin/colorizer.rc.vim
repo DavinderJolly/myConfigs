@@ -1,3 +1,7 @@
+if !exists('g:loaded_cmp') | finish | endif
+
+lua <<EOF
+
 local colorizer = require'colorizer'
 if not colorizer then
   return
@@ -13,3 +17,5 @@ colorizer.setup({ '*' }, {
   css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
   mode = 'background', -- Set the display mode. background / foreground
 })
+
+EOF
