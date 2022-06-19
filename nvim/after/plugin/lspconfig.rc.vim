@@ -43,15 +43,24 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
+nvim_lsp.clojure_lsp.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "clojure", "edn" }
+  }
+
+
 nvim_lsp.eslint.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
       "typescript",
       "typescriptreact",
       "typescript.tsx",
-      "javascript",
-      "javascriptreact",
+      "vue",
     }
   }
 
@@ -64,6 +73,7 @@ nvim_lsp.tsserver.setup {
       "typescript.tsx",
       "javascript",
       "javascriptreact",
+      "javascript.jsx",
     }
   }
 
@@ -98,19 +108,24 @@ nvim_lsp.emmet_ls.setup {
 nvim_lsp.cssls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "css", "scss" },
+  filetypes = { "css", "scss", "less" }
+  }
+
+nvim_lsp.tailwindcss.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
   }
 
 nvim_lsp.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "c", "cpp", "c++", "cc" }
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
   }
 
 nvim_lsp.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "rust", "rs" }
+  filetypes = { "rust" }
   }
 
 nvim_lsp.vimls.setup {
@@ -134,7 +149,7 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.dockerls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "dockerfile", "docker-compose" }
+  filetypes = { "dockerfile" }
   }
 
 nvim_lsp.yamlls.setup {
@@ -150,6 +165,5 @@ if vim.fn.has('unix') == 1 then
     filetypes = { "sh", "zsh" }
     }
 end
-
 
 EOF
