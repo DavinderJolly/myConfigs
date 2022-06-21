@@ -9,6 +9,7 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 set nocompatible
+set nosc noru nosm
 set number
 set relativenumber
 set splitright
@@ -41,7 +42,6 @@ endif
 " Suppress appending <PasteStart> and <PasteEnd> when pasting
 set t_BE=
 
-set nosc noru nosm
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 " set showmatch
