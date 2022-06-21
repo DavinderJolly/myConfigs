@@ -58,9 +58,6 @@ if has("nvim")
   " File Icons
   Plug 'kyazdani42/nvim-web-devicons'
 
-  " Copilot
-  Plug 'github/copilot.vim'
-
   " Custom functions
   Plug 'nvim-lua/plenary.nvim'
 
