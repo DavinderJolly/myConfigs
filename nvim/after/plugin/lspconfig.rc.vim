@@ -99,6 +99,20 @@ nvim_lsp.jdtls.setup {
   }
 
 
+nvim_lsp.html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "html" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+      },
+    provideFormatter = true
+    },
+  }
+
 nvim_lsp.emmet_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,

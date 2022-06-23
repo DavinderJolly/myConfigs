@@ -1,5 +1,6 @@
 if !exists('g:loaded_cmp') | finish | endif
 
+set spelllang=en_us
 set completeopt=menuone,noinsert,noselect
 
 lua <<EOF
@@ -30,6 +31,12 @@ lua <<EOF
       { name = 'path' }
     }, {
       { name = 'luasnip' },
+    }, {
+      { name = 'nvim_lsp' }
+    }, {
+      { name = 'spell' }
+    }, {
+      { name = 'calc' }
     }),
     formatting = {
       format = lspkind.cmp_format({with_text = false, maxwidth = 50})

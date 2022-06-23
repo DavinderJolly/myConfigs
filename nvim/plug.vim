@@ -50,6 +50,9 @@ if has("nvim")
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/cmp-calc'
+  Plug 'hrsh7th/cmp-nvim-lua'
+  Plug 'f3fora/cmp-spell'
   Plug 'saadparwaiz1/cmp_luasnip'
 
   " Status line
