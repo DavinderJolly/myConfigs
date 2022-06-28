@@ -28,4 +28,4 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Open Current File in browser
-command OpenInBrave :!brave %:p
+command OpenInBrave :!brave "%:p"
