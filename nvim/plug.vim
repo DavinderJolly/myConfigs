@@ -84,6 +84,8 @@ if has("nvim")
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'TimUntersberger/neogit'
 
+  Plug 'D:/github.com/DavinderJolly/dispresence'
+
 endif
 
 call plug#end()

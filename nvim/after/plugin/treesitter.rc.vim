@@ -22,6 +22,7 @@ require'nvim-treesitter.configs'.setup {
     "bash",
     "clojure",
     "c",
+    "c_sharp",
     "cpp",
     "dockerfile",
     "html",
