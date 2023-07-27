@@ -17,7 +17,7 @@ if has("nvim")
   Plug 'ful1e5/onedark.nvim'
 
   " Tree plugin because netrw weird on windows
-  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-tree.lua'
 
   " EditorConfig files
   Plug 'gpanders/editorconfig.nvim'
@@ -26,7 +26,8 @@ if has("nvim")
   Plug 'tpope/vim-commentary'
 
   " Automatically install language servers
-  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+  Plug 'williamboman/mason-lspconfig.nvim'
 
   " Configure nvim's builtin lsp client
   Plug 'neovim/nvim-lspconfig'
@@ -82,7 +83,7 @@ if has("nvim")
 
   " Git Plugins
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'TimUntersberger/neogit'
+  Plug 'NeogitOrg/neogit'
 
   Plug 'D:/github.com/DavinderJolly/dispresence'
 
