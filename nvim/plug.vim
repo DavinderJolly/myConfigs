@@ -37,7 +37,8 @@ if has("nvim")
 
   " Plugins for highlighting
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'p00f/nvim-ts-rainbow'
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+  Plug 'HiPhish/rainbow-delimiters.nvim'
 
   " Show AST created by treesitter
   Plug 'nvim-treesitter/playground'
@@ -85,8 +86,7 @@ if has("nvim")
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'NeogitOrg/neogit'
 
-  Plug 'D:/github.com/DavinderJolly/dispresence'
-
 endif
 
 call plug#end()
+
