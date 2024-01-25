@@ -63,6 +63,7 @@ set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
 set backspace=start,eol,indent
+
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
@@ -90,10 +91,9 @@ set cursorline
 " Set cursor line color on visual mode
 highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Gray40
 
-highlight LineNr cterm=none ctermfg=240 guifg=Gray40 guibg=#000000
+highlight LineNr cterm=NONE ctermfg=240 guifg=Gray40 guibg=#000000
 
 augroup BgHighlight
-  autocmd!
   autocmd WinEnter * set cul
   autocmd WinLeave * set nocul
 augroup END
@@ -102,6 +102,7 @@ if &term =~ "screen"
   autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
   autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
 endif
+
 
 "}}}
 
@@ -118,6 +119,8 @@ au BufNewFile,BufRead *.mdx set filetype=markdown
 au BufNewFile,BufRead *.flow set filetype=javascript
 " Fish
 au BufNewFile,BufRead *.fish set filetype=fish
+" glsl Shaders
+au BufNewFile,BufRead *.{vert,frag} set filetype=glsl
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
