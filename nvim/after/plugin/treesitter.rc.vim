@@ -47,6 +47,7 @@ require'nvim-treesitter.configs'.setup {
     "cpp",
     "dockerfile",
     "html",
+    "htmldjango",
     "css",
     "javascript",
     "typescript",
@@ -56,11 +57,12 @@ require'nvim-treesitter.configs'.setup {
     "markdown",
     "make",
     "go",
+    "rust",
     "gomod",
     "vim",
     "lua",
     "query",
-    "gitignore",
+    "gitignore"
   },
   autotag = {
     enable = true,

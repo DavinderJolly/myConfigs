@@ -43,9 +43,6 @@ if has("nvim")
   " Show AST created by treesitter
   Plug 'nvim-treesitter/playground'
 
-  " Snippets
-  Plug 'L3MON4D3/LuaSnip'
-
   " Autocompletion plugins
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -55,6 +52,9 @@ if has("nvim")
   Plug 'hrsh7th/cmp-calc'
   Plug 'hrsh7th/cmp-nvim-lua'
   Plug 'f3fora/cmp-spell'
+
+  " Snippets
+  Plug 'L3MON4D3/LuaSnip'
   Plug 'saadparwaiz1/cmp_luasnip'
 
   " Status line
@@ -85,6 +85,15 @@ if has("nvim")
   " Git Plugins
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'NeogitOrg/neogit'
+
+  " Hex editing
+  Plug 'RaafatTurki/hex.nvim'
+
+  " CPP Generate Implementations
+  Plug 'DavinderJolly/generate.nvim'
+
+  " Case Preserving Subverts / Subtitutes
+  Plug 'tpope/vim-abolish'
 
 endif
 
