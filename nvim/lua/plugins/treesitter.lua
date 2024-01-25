@@ -1,0 +1,38 @@
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "tsx",
+        "glsl",
+        "toml",
+        "php",
+        "scss",
+        "python",
+        "bash",
+        "clojure",
+        "c",
+        "c_sharp",
+        "cpp",
+        "dockerfile",
+        "html",
+        "htmldjango",
+        "css",
+        "javascript",
+        "typescript",
+        "json",
+        "jsonc",
+        "yaml",
+        "markdown",
+        "make",
+        "go",
+        "rust",
+        "gomod",
+        "vim",
+        "lua",
+        "query",
+        "gitignore"
+      },
+    },
+  },
+}
