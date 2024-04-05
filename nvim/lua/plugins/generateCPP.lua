@@ -1,1 +1,0 @@
-return { { "DavinderJolly/generate.nvim" } }
